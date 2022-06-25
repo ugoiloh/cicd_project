@@ -9,7 +9,7 @@ jobs:
       - image: circleci/node:13.8.0
     # Add steps to the job
     steps:
-      # - checkout
+      - checkout
       - run:
           name: "Print hello"
           command: "echo hello"
@@ -19,7 +19,7 @@ jobs:
       - image: circleci/node:13.8.0
     # Add steps to the job
     steps:
-      # - checkout
+      - checkout
       - run:
           name: "Print world"
           command: "echo World!"
@@ -29,6 +29,7 @@ workflows:
   welcome:
     jobs:
       - print_hello
+
       - print_world:
         requires:
           - print_hello
