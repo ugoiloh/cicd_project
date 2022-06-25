@@ -105,6 +105,6 @@ workflows:
 
   simulate-error:
     jobs:
-      - test-error
+      - test_error
 
 
