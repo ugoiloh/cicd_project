@@ -34,18 +34,18 @@ workflows:
           - print_hello
 
 
-workflows:
-  test-env-vars:
-    jobs:
-      - build
+# workflows:
+#   test-env-vars:
+#     jobs:
+#       - build
 
-jobs:
-  build:
-    docker:
-      - image: cimg/base:2021.11
-    steps:
-      - checkout
-      - run:
-          name: "echo an env var that is part of our project"
-          command: |
-            echo $my_env_var # this env var must be set within the project
+# jobs:
+#   build:
+#     docker:
+#       - image: cimg/base:2021.11
+#     steps:
+#       - checkout
+#       - run:
+#           name: "echo an env var that is part of our project"
+#           command: |
+#             echo $my_env_var # this env var must be set within the project
