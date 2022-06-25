@@ -23,6 +23,16 @@ jobs:
       - run:
           name: "Print world"
           command: "echo World!"
+
+  build:
+    docker:
+      - image: cimg/base:2021.11
+    steps:
+      - checkout
+      - run:
+          name: "echo an env var that is part of our project"
+          command: |
+            echo $my_env_var # this env var must be set within the project
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -34,19 +44,8 @@ workflows:
       #   requires:
       #     - print_hello
 
+  test-env-vars:
+    jobs:
+      - build
 
-# workflows:
-#   test-env-vars:
-#     jobs:
-#       - build
 
-# jobs:
-#   build:
-#     docker:
-#       - image: cimg/base:2021.11
-#     steps:
-#       - checkout
-#       - run:
-#           name: "echo an env var that is part of our project"
-#           command: |
-#             echo $my_env_var # this env var must be set within the project
