@@ -17,7 +17,8 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id:
-        id: << pipeline.id >>
+          id: << pipeline.id >>
+
   print_hello:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     docker:
@@ -73,7 +74,7 @@ workflows:
   print-parameter-id:
     jobs:
       - print_id
-      
+
   welcome:
     jobs:
       - print_hello
