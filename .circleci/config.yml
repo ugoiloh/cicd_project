@@ -29,7 +29,7 @@ workflows:
   welcome:
     jobs:
       - print_hello
-      - print_world
+      - print_world:
         requires:
           - print_hello
 
