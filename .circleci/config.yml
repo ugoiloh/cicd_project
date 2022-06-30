@@ -32,15 +32,16 @@ jobs:
           command: apk add --update ansible
             # Install Ansible
       - run:
-          name: Run Playbook and Configure server
-          command: 
-            ansible-playbook -i inventory-file main-remote.yaml
+          name: |
+            Run Playbook and Configure server
+          command: |
+            ansible-playbook -i inventory main-remote.yaml
 # Sequential workflow
 workflows:
   # Name the workflow
   myWorkflow:
     jobs:
-      - create_infrastructure
-      # - configure_infrastructure:
+      # - create_infrastructure
+      - configure_infrastructure:
       #     requires:
       #       - create_infrastructure
