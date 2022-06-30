@@ -26,7 +26,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           # You can get this ID in the section where you registered the SSH Key
-          fingerprints: ["f9:21:ff:8a:cb:80:a8:20:f5:31:f6:b3:fb:75:ef:a8"] 
+          fingerprints: ["74:c4:c8:6c:7b:40:f5:a6:86:ba:44:8f:4e:8b:36:55"] 
       - run:
           name: Install Ansible
           command: |
@@ -41,7 +41,7 @@ workflows:
   # Name the workflow
   myWorkflow:
     jobs:
-      - create_infrastructure
-      # - configure_infrastructure
+      # - create_infrastructure
+      - configure_infrastructure
       #     requires:
       #       - create_infrastructure
