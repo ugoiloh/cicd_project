@@ -52,10 +52,10 @@ jobs:
     docker:
       - image: amazon/aws-cli
     steps:
-      - shell:
+      - run:
           name: Test job
           # Fail the job intentionally to simulate an error.
-          command: return 1
+          command: exit 1
       - destroy_environment
 # Sequential workflow
 workflows:
