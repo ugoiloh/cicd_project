@@ -29,10 +29,10 @@ jobs:
               fingerprints: ["60:2f:29:78:98:bb:3d:b2:5c:a9:7a:ef:be:cd:89:c6"] 
       - run:
           name: Install Ansible
-          command: apk add --update ansible
-            # Install Ansible
+          command: |
+            apk add --update ansible
       - run:
-          name: |
+          name: 
             Run Playbook and Configure server
           command: |
             ansible-playbook -i inventory main-remote.yaml
